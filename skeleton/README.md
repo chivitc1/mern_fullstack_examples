@@ -61,3 +61,51 @@ npm install cors
 
 npm install mongoose
 
+- Install lodash
+
+lodash is a JavaScript library which provides utility functions for common programming tasks including manipulation of arrays and objects
+
+npm install lodash
+
+- Install jsonwebtoken
+
+npm install jsonwebtoken
+
+- Install express-jwt
+
+The express-jwt module is middleware that validates JSON Web Tokens
+
+npm install express-jwt
+
+# Test back-end
+
+- Create user
+
+POST localhost:3000/api/users
+
+{
+"name":"chi nguyen",
+"email":"chivitc1@gmail.com",
+"password":"abc123"
+}
+
+- Get list
+
+GET localhost:3000/api/users
+
+- Get one - code 401
+
+GET localhost:3000/api/users/{userID}
+
+- Signin - got token
+
+POST localhost:3000/auth/signin
+
+{
+"email":"chivitc1@gmail.com",
+"password":"abc123"
+}
+
+- Get one - code 200
+
+GET localhost:3000/api/users/{userID}
