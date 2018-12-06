@@ -168,10 +168,22 @@ npm install material-ui-icons
 
 npm install --save-dev file-loader
 
-## Prototypes
+## Design
 - HomePage
 
-<img src="./prototypes/HomePage1.png" alt="HomePage" />
+API:
+
+GET /
+
+<img src="./prototypes/HomePage1.png" alt="HomePage" width=400 height=400/>
+
+- UserPage
+
+API:
+
+GET /users
+
+<img src="./prototypes/UserPage.png" alt="UserPage"  width=400 height=400/>
 
 
 

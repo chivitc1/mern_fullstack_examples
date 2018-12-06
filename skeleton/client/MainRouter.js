@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import Home from './core/Home'
+import Users from './user/Users'
 
 /**
  * As we develop more view components, we will update the MainRouter to add
@@ -17,6 +18,7 @@ class MainRouter extends Component {
             <div>
                 <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/users" component={Users} />
                 </Switch>
             </div>
         )
