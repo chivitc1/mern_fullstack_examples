@@ -5,11 +5,18 @@ import compress from 'compression'
 import cors from 'cors'
 import helmet from 'helmet'
 
-import template from './../template'
+import Template from './../index'
 import authRoutes from './routes/auth.routes'
 import userRoutes from './routes/user.routes'
+import path from 'path'
+
+// Only for dev mode, comment out for production
+import devBundle from './devBundle'
 
 const app = express()
+
+// Only for dev mode, comment out for production
+devBundle.compile(app)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -19,12 +26,16 @@ app.use(compress())
 app.use(helmet())
 app.use(cors())
 
+const CURRENT_WORKING_DIR = process.cwd()
+
 // mount routes
+app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
+
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 
 app.get('/', (req, res) => {
-    res.status(200).send(template())
+    res.status(200).send(Template())
 })
 
 //Need to be near the
