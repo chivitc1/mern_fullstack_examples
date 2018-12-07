@@ -175,7 +175,7 @@ API:
 
 GET /
 
-<img src="./prototypes/HomePage1.png" alt="HomePage" width=400 height=400/>
+<img src="./prototypes/HomePage1.png" alt="HomePage" width=600 height=400/>
 
 - UserPage
 
@@ -183,7 +183,43 @@ API:
 
 GET /users
 
-<img src="./prototypes/UserPage.png" alt="UserPage"  width=400 height=400/>
+<img src="./prototypes/UserPage.png" alt="UserPage"  width=600 height=400/>
 
 
+- SignupPage
 
+API:
+
+POST /signup
+
+<img src="./prototypes/SignupPage.png" alt="SignupPage"  width=600 height=400/>
+
+- SigninPage
+
+API: 
+
+POST /auth/signin
+
+<img src="./prototypes/SigninPage.png" alt="SigninPage"  width=600 height=400/>
+
+- UserProfilePage
+
+API: GET /user/profile
+
+Anonymous view
+
+<img src="./prototypes/UserProfilePage.png" alt="UserProfile"  width=600 height=400/>
+
+Owner view
+
+<img src="./prototypes/UserProfileSignined.png" alt="User Signined Profile"  width=600 height=400/>
+
+- DeleteUserPage
+
+API: DELETE /user/{userId}
+
+<img src="./prototypes/DeleteUserPage.png" alt="Delete User"  width=600 height=400/>
+
+- Menu 
+
+<img src="./prototypes/Menu.png" alt="Menu"  width=600 height=400/>
