@@ -52,15 +52,19 @@ class Signin extends Component {
             email: this.state.email || undefined,
             password: this.state.password || undefined
         }
-        signin(user).then((data) => {
+        signin(user).then((res) => res.json())
+        .then((data) => {
+            console.log("LOGIN DATA:")
+            console.log(data)
             if (data.error) {
                 this.setState({error: data.error})
             } else {
                 authHelper.authenticate(data, () => {
+                
                     this.setState({redirectToReferrer: true})
                 })
-            }
-        })
+            }            
+        }).catch(error => this.setState({error}))
     }
 
     handleChange = name => event => {

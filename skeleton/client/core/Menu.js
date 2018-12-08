@@ -29,9 +29,7 @@ const Menu = withRouter(({history}) => (
             </Link>
 
             {
-                !authHelper.isAuthenticated() && 
-                (
-                <span>
+                !authHelper.isAuthenticated() && (<span>
                     <Link to="/signup">
                         <Button style={isActive(history, "/signup")}>Sign Up</Button>
                     </Link>
@@ -42,19 +40,15 @@ const Menu = withRouter(({history}) => (
                 )
             }
             {
-                authHelper.isAuthenticated() && 
-                (
-                <span>
-                    <Link to={"/user/" + authHelper.isAuthenticated().user._id}>
-                        <Button style={isActive(history, "/user/" + authHelper.isAuthenticated().user._id)}>My Profile</Button>
-                    </Link>
-                    <Button color="inherit" onClick={() => {
-                        auth.signout(() => history.push("/"))
-
-                    }}>Sign out</Button>
-                </span>
-                )
-            }
+        authHelper.isAuthenticated() && <span>
+          <Link to={"/user/" + authHelper.isAuthenticated().user._id}>
+            <Button style={isActive(history, "/user/" + authHelper.isAuthenticated().user._id)}>My Profile</Button>
+          </Link>
+          <Button color="inherit" onClick={() => {
+              authHelper.signout(() => history.push('/'))
+            }}>Sign out</Button>
+        </span>
+      }
         </Toolbar>
     </AppBar>
 ))
