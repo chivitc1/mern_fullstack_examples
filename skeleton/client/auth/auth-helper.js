@@ -1,3 +1,5 @@
+import {signout} from './auth-api.js'
+
 const auth = {
     isAuthenticated() {
         if (typeof window == "undefined")
@@ -13,11 +15,13 @@ const auth = {
             sessionStorage.setItem('jwt', JSON.stringify(jwt))
         cb()
     },
-    signout(cb) {
+    logout(cb) {
         if (typeof window !== "undefined")
             sessionStorage.removeItem("jwt")
+        console.log("FUNC:")
+        console.log(cb)
         cb()
-        this.signout().then((data) => {
+        signout().then((data) => {
             document.cookie = "t=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
         })
     }

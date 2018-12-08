@@ -6,7 +6,9 @@ import Typography from 'material-ui/Typography'
 import Icon from 'material-ui/Icon'
 import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
-import {create} from './user-api.js'
+import {update} from './user-api.js'
+import authHelper from '../auth/auth-helper'
+import {Redirect} from 'react-router-dom'
 
 
 const styles = theme => ({
@@ -38,12 +40,13 @@ const styles = theme => ({
   class EditProfile extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.state = {            
             name: '',
             password: '',
             email: '',
-            open: false,
-            error: ''
+            redirectToProfile: false,
+            error: '',
+            userId: this.props.match.params.userId
         }
     }
 
@@ -52,24 +55,31 @@ const styles = theme => ({
     }
 
     clickSubmit = () => {
+        const jwt = authHelper.isAuthenticated()
         const user = {
             name: this.state.name || undefined,
             email: this.state.email || undefined,
             password: this.state.password || undefined
         }
 
-        create(user).then((data) => {
+        update(
+            {userId: this.state.userId},
+            {t: jwt.token}, 
+            user
+        ).then((data) => {
             if (data.error) {
                 this.setState({error: data.error})
             } else {
-                this.setState({error: '', open: true})
+                this.setState({error: '', redirectToProfile: true})
             }
-        })
+        })        
     }
 
     render() {
         const {classes} = this.props
-
+        if (this.state.redirectToProfile) {
+            return (<Redirect to={'/user/' + this.state.userId} />)
+        }
         return(
             <div>
                 <Card className={classes.card}>

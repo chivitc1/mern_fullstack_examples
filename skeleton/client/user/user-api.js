@@ -26,7 +26,7 @@ const read = (params, credentials) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer' + credentials.t
+            'Authorization': 'Bearer ' + credentials.t
         }
     })
     .then((res) => { return res.json() })
@@ -39,7 +39,7 @@ const update = (params, credentials, user) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer' + credentials.t
+            'Authorization': 'Bearer ' + credentials.t
         },
         body: JSON.stringify(user)
     })
@@ -53,7 +53,7 @@ const remove = (params, credentials) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer' + credentials.t
+            'Authorization': 'Bearer ' + credentials.t
         }
     })
     .then((res) => { return res.json() })

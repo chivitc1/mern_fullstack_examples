@@ -36,7 +36,6 @@ class Profile extends Component {
             user: '',
             redirectToSignin: false
         }
-        this.match = props.match
     }
 
     init = (userId) => {
@@ -56,11 +55,11 @@ class Profile extends Component {
     }
 
     componentWillReceiveProps = (props) => {
-        this.init(props.match.params.userId)
+        this.init(this.props.match.params.userId)
     }
 
     componentDidMount = () => {
-        this.init(this.match.params.userId)
+        this.init(this.props.match.params.userId)
     }
 
     render() {

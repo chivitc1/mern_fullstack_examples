@@ -7,7 +7,8 @@ const signin = (user) => {
         },
         credentials: 'include',
         body: JSON.stringify(user)
-    })
+    }).then((res) => res.json())
+    .catch((error) => console.log(error))
 }
 
 const signout = () => {

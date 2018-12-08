@@ -32,7 +32,7 @@ class DeleteUser extends Component {
             if (data.error) {
                 console.log(data.error)
             } else {
-                authHelper.signout(() => console.log('deleted'))
+                authHelper.logout(() => console.log('deleted'))                
                 this.setState({redirect: true})
             }
         })
