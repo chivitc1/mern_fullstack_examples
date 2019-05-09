@@ -6,6 +6,6 @@ services:
     ports:
       - "27017:27017"
     environment:
-      MONGODB_USERNAME: user1
+      MONGODB_USERNAME: admin
       MONGODB_PASSWORD: password123
-      MONGODB_DATABASE: my_database
+      MONGODB_DATABASE: socialMedia
