@@ -7,13 +7,24 @@
   "author": "chivitc1",
   "license": "MIT",
   "scripts": {
-    "startDev": "nodemon",
+    "dev": "nodemon",
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
-    "start": "NODE_ENV=production node ./dist/server.generated.js"
+    "start": "NODE_ENV=production node ./dist/server.generated.js",
+    "debug": "babel-node --inspect --presets stage-2 -- server/server.js --inspect --inspect-brk=5858"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "helmet": "^3.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
     "mongodb": "^3.2.4",
+    "mongoose": "^5.5.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
