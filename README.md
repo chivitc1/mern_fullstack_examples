@@ -8,7 +8,15 @@ $ yarn install
 $ docker-compose up -d
 
 ## Start in dev mode
-$ yarn startDev
+$ yarn dev
+
+## Debug backend
+
+Start back-end in debug mode port 5858:
+
+$ yarn debug
+
+Start VSCode debug process: Ctrl + Shift + D
 
 Browse to: http://localhost:3000
 

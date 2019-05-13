@@ -1,6 +1,6 @@
 const config = {
     env: process.env.NODE_ENV || 'development',
-    api_port: process.env.API_PORT || 3000,
+    api_port: process.env.API_PORT || 3001,
     jwtSecret: process.env.JWT_SECRET || 'chinv secret',
     dbUri: process.env.DB_URI || 'mongodb://' 
     + (process.env.DB_USERNAME || 'admin') + ':' + (process.env.DB_PASSWORD || 'password123') + '@'
