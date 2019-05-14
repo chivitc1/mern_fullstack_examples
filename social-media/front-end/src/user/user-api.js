@@ -1,5 +1,8 @@
+import config from '../config'
+const API_BASE_URL = config.API_BASE_URL
+
 const create = (user) => {
-    return fetch('/api/users', {
+    return fetch(`${API_BASE_URL}/api/users`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -12,7 +15,7 @@ const create = (user) => {
 }
 
 const list = () => {
-    return fetch('/api/users', {
+    return fetch(`${API_BASE_URL}/api/users`, {
         method: 'GET'
     })
         .then(response => response.json())
@@ -20,7 +23,7 @@ const list = () => {
 }
 
 const read = (params, credentials) => {
-    return fetch(`/api/users/${params.userId}`, {
+    return fetch(`${API_BASE_URL}/api/users/${params.userId}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -33,7 +36,7 @@ const read = (params, credentials) => {
 }
 
 const update = (params, credentials, user) => {
-    return fetch(`/api/users/${params.userId}`, {
+    return fetch(`${API_BASE_URL}/api/users/${params.userId}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
@@ -47,7 +50,7 @@ const update = (params, credentials, user) => {
 }
 
 const remove = (params, credentials) => {
-    return fetch(`/api/users/${params.userId}`, {
+    return fetch(`${API_BASE_URL}/api/users/${params.userId}`, {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',

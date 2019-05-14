@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "startServer": "./scripts/startServer.sh",
+    "startClient": "./scripts/startClient.sh",
+    "setup": "./scripts/install.sh"
+  }
+}
