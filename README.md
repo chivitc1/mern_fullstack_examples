@@ -15,7 +15,11 @@ $ yarn setup
 
 Clone and update .env file after clone source code from github:
 
+$ cd social-media/
+
 $ cp ./envs/example.env ./envs/.env
+
+$ cp front-end/example.env front-end/.env
 
 ## Start DB
 

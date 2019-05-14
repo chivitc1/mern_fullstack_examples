@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
 export $(grep -v '^#(.+)$' envs/.env | xargs)
+
+echo $API_PORT
 
 SCRIPT_PATH=$0
 function set_current_working_dir() {

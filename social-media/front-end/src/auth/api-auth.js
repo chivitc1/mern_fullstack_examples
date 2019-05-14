@@ -1,11 +1,13 @@
+import config from '../config'
+const API_BASE_URL = config.API_BASE_URL
+
 const signin = (user) => {
-    return fetch('/api/signin', {
+    return fetch(`${API_BASE_URL}/auth/signin`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify(user)
     })
         .then(response => response.json())

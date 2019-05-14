@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 export $(grep -v '^#(.+)$' envs/.env | xargs)
 
 SCRIPT_PATH=$0
@@ -10,6 +11,6 @@ set_current_working_dir "front-end"
 yarn install
 cd ..
 
-set_current_working_dir "backend-end"
+set_current_working_dir "back-end"
 yarn install
 cd ..
